@@ -1,0 +1,18 @@
+# install this to /etc/systemd/system/mcp-radicale.service
+
+[Unit]
+Description=MCP Radicale Bridge
+After=network.target radicale.service
+
+[Service]
+User=your_username
+Group=your_groupname
+WorkingDirectory=/path/to/script/directory
+ExecStart=/usr/bin/python3 /path/to/script/mcp_radicale_bridge.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+
