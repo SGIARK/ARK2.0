@@ -1,0 +1,10 @@
+version: '3'
+services:
+  radicale:
+    build: .
+    ports:
+      - "5232:5232"
+    volumes:
+      - ./config:./config:ro
+      - ./radicale-data/users:./htpasswd:ro
+      - ./radicale-data/collections:/data/collections
